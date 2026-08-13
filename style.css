@@ -118,3 +118,41 @@ th {
 tr:hover {
     background: #f5f7fa;
 }
+@media (max-width: 768px) {
+
+    nav {
+        padding: 15px 5px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 8px;
+        font-size: 14px;
+    }
+
+    header {
+        padding: 50px 15px;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    main {
+        padding: 30px 15px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
