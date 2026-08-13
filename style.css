@@ -96,3 +96,25 @@ footer {
 
     padding: 30px;
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #111827;
+    color: white;
+}
+
+tr:hover {
+    background: #f5f7fa;
+}
