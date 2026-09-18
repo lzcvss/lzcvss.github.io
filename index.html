@@ -135,14 +135,14 @@
         <h2>实验结果 / Experimental Results</h2>
 
         <p>
-            基于 SegMAN-B，在 ADE20K 数据集上研究
-            边界增强、Haar 小波与边界损失方法。
-            以下为目前已记录的实验结果。
+            以 SegMAN-B 为基准，研究边界增强、多尺度 Haar 小波和边界感知损失，
+            并在 ADE20K 与 Cityscapes 验证集上记录分割性能。
+            以下区分最佳验证 checkpoint 与训练结束时的 checkpoint，避免混淆两者。
         </p>
 
         <div class="card">
 
-            <h3>性能对比</h3>
+            <h3>ADE20K：性能对比</h3>
 
             <table>
                 <thead>
@@ -156,7 +156,7 @@
 
                 <tbody>
                 <tr>
-                    <td>SegMAN-B Baseline</td>
+                    <td>SegMAN-B Baseline (local reproduction)</td>
                     <td>ADE20K</td>
                     <td>48.66</td>
                     <td>—</td>
@@ -175,8 +175,8 @@
             </table>
 
             <p>
-                Best recorded result: 50.63% mIoU
-                at 148,000 iterations.
+                已记录的最佳验证结果：第 148,000 次迭代，mIoU 为 50.63%。
+                此处报告的是最佳 checkpoint，不将其误写为最终迭代 checkpoint 的结果。
             </p>
 
         </div>
@@ -184,7 +184,7 @@
 
         <div class="card">
 
-            <h3>训练进展 / Training Progress</h3>
+            <h3>ADE20K：训练记录 / Training Progress</h3>
 
             <table>
                 <thead>
@@ -218,8 +218,57 @@
             </table>
 
             <p>
-                Training schedule: 160,000 iterations.
-                Final evaluation result: to be confirmed.
+                训练计划：160,000 次迭代；上表展示已核实的验证记录。
+                最终迭代的独立验证指标尚未纳入本页。
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Cityscapes：已完成训练 / Completed Training</h3>
+
+            <p>
+                已完成 160,000 次迭代。以下结果来自 Cityscapes 验证集（500 张图像）；
+                第 112,000 次迭代获得本次训练的最佳 mIoU。
+            </p>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Checkpoint / Iteration</th>
+                    <th>mIoU (%)</th>
+                    <th>aAcc (%)</th>
+                    <th>mAcc (%)</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>106,000</td>
+                    <td>82.41</td>
+                    <td>96.71</td>
+                    <td>89.19</td>
+                </tr>
+                <tr>
+                    <td><strong>112,000 (Best)</strong></td>
+                    <td><strong>83.02</strong></td>
+                    <td><strong>96.77</strong></td>
+                    <td><strong>89.55</strong></td>
+                </tr>
+                <tr>
+                    <td>160,000 (Final)</td>
+                    <td>82.92</td>
+                    <td>96.85</td>
+                    <td>89.28</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>
+                当前展示的是改进模型自身的验证结果；仍需在相同训练和评测设置下
+                复现 Cityscapes 基准模型，才能量化改进方法带来的精度增益。
             </p>
 
         </div>
@@ -229,28 +278,10 @@
 
             <h3>实验设置 / Experimental Setup</h3>
 
-            <p>
-                Dataset: ADE20K
-            </p>
-
-            <p>
-                Classes: 150
-            </p>
-
-            <p>
-                Crop Size: 512 × 512
-            </p>
-
-            <p>
-                Framework: PyTorch / MMSegmentation
-            </p>
-
-            <p>
-                Research:
-                Boundary Enhancement,
-                Haar Wavelet,
-                Boundary-Aware Loss.
-            </p>
+            <p>ADE20K：150 类；训练裁剪尺寸 512 × 512。</p>
+            <p>Cityscapes：19 类；训练裁剪尺寸 512 × 1024；单卡 batch size = 2；训练 160,000 次迭代。</p>
+            <p>Framework：PyTorch / MMSegmentation。</p>
+            <p>Research：Boundary Enhancement、Multi-Scale Haar Wavelet、Boundary-Aware Loss。</p>
 
         </div>
 
@@ -260,12 +291,13 @@
             <h3>后续实验 / Ongoing Work</h3>
 
             <p>
-                Boundary IoU、mBIoU、消融实验、
-                跨数据集验证与模型复杂度分析正在整理。
+                ADE20K 和 Cityscapes 验证实验已取得上述记录。
+                接下来开展同设置基准模型对比、模块消融、Cityscapes 边界指标评测，
+                以及模型复杂度与推理效率分析。
             </p>
 
             <p>
-                Results will be updated after verification.
+                不同数据集及不同训练、评测协议下的 mIoU 不直接作为方法增益进行比较。
             </p>
 
         </div>
