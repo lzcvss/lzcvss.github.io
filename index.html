@@ -9,6 +9,7 @@
     <title>刘征 | 计算机视觉与语义分割</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -131,29 +132,143 @@
 
     <section id="results">
 
-        <h2>实验结果</h2>
+        <h2>实验结果 / Experimental Results</h2>
 
-        <table>
+        <p>
+            基于 SegMAN-B，在 ADE20K 数据集上研究
+            边界增强、Haar 小波与边界损失方法。
+            以下为目前已记录的实验结果。
+        </p>
 
-            <tr>
-                <th>Model</th>
-                <th>Dataset</th>
-                <th>mIoU</th>
-            </tr>
+        <div class="card">
 
-            <tr>
-                <td>SegMAN</td>
-                <td>ADE20K</td>
-                <td>48.66</td>
-            </tr>
+            <h3>性能对比</h3>
 
-            <tr>
-                <td>Our Method</td>
-                <td>ADE20K</td>
-                <td>--</td>
-            </tr>
+            <table>
+                <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Dataset</th>
+                    <th>mIoU (%)</th>
+                    <th>Improvement</th>
+                </tr>
+                </thead>
 
-        </table>
+                <tbody>
+                <tr>
+                    <td>SegMAN-B Baseline</td>
+                    <td>ADE20K</td>
+                    <td>48.66</td>
+                    <td>—</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        SegMAN-B + Boundary Enhancement
+                        + Haar Wavelet + Boundary Loss
+                    </td>
+                    <td>ADE20K</td>
+                    <td><strong>50.63</strong></td>
+                    <td><strong>+1.97 pp</strong></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Best recorded result: 50.63% mIoU
+                at 148,000 iterations.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>训练进展 / Training Progress</h3>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Iteration</th>
+                    <th>mIoU (%)</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>138,000</td>
+                    <td>50.27</td>
+                </tr>
+
+                <tr>
+                    <td>144,000</td>
+                    <td>50.52</td>
+                </tr>
+
+                <tr>
+                    <td>146,000</td>
+                    <td>50.59</td>
+                </tr>
+
+                <tr>
+                    <td>148,000</td>
+                    <td><strong>50.63</strong></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Training schedule: 160,000 iterations.
+                Final evaluation result: to be confirmed.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>实验设置 / Experimental Setup</h3>
+
+            <p>
+                Dataset: ADE20K
+            </p>
+
+            <p>
+                Classes: 150
+            </p>
+
+            <p>
+                Crop Size: 512 × 512
+            </p>
+
+            <p>
+                Framework: PyTorch / MMSegmentation
+            </p>
+
+            <p>
+                Research:
+                Boundary Enhancement,
+                Haar Wavelet,
+                Boundary-Aware Loss.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>后续实验 / Ongoing Work</h3>
+
+            <p>
+                Boundary IoU、mBIoU、消融实验、
+                跨数据集验证与模型复杂度分析正在整理。
+            </p>
+
+            <p>
+                Results will be updated after verification.
+            </p>
+
+        </div>
 
     </section>
 
