@@ -4,24 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="刘征的计算机视觉与语义分割科研个人主页">
+    <meta name="description" content="刘征的计算机视觉与语义分割科研个人主页">
     <title>刘征 | 计算机视觉与语义分割</title>
-
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 
 <body>
-
 <header>
     <h1>刘征</h1>
-
-    <p>
-        Computer Vision · Semantic Segmentation · Deep Learning
-    </p>
+    <p>Computer Vision · Semantic Segmentation · Deep Learning</p>
 </header>
-
 
 <nav>
     <a href="#about">关于我</a>
@@ -32,315 +25,136 @@
     <a href="#contact">联系方式</a>
 </nav>
 
-
 <main>
-
     <section id="about">
-
         <h2>关于我</h2>
-
-        <p>
-            我的研究方向主要集中在计算机视觉和语义分割，
-            关注高精度像素级图像理解方法。
-        </p>
-
+        <p>我的研究方向主要集中在计算机视觉和语义分割，关注高精度像素级图像理解方法。</p>
     </section>
-
 
     <section id="research">
-
         <h2>研究方向</h2>
-
         <div class="card">
-
             <h3>全监督语义分割</h3>
-
-            <p>
-                研究全局上下文、局部边界、多尺度特征、
-                频域信息以及高精度语义分割方法。
-            </p>
-
+            <p>研究全局上下文、局部边界、多尺度特征、频域信息以及高精度语义分割方法。</p>
         </div>
-
-
         <div class="card">
-
             <h3>基础视觉模型</h3>
-
-            <p>
-                研究 SAM、DINO、CLIP 等基础模型
-                在语义分割中的应用。
-            </p>
-
+            <p>研究 SAM、DINO、CLIP 等基础模型在语义分割中的应用。</p>
         </div>
-
-
         <div class="card">
-
             <h3>边界精细分割</h3>
-
-            <p>
-                重点研究目标轮廓、Boundary IoU、
-                小波和边界增强方法。
-            </p>
-
+            <p>重点研究目标轮廓、Boundary IoU、小波和边界增强方法。</p>
         </div>
-
     </section>
 
-
     <section id="projects">
-
         <h2>科研项目</h2>
-
         <div class="card">
-
             <h3>SegMAN 复现与改进</h3>
-
-            <p>
-                基于 OpenMMLab / MMSegmentation
-                进行 SegMAN 模型复现和模块改进。
-            </p>
-
+            <p>基于 OpenMMLab / MMSegmentation 进行 SegMAN 模型复现和模块改进。</p>
+            <p>已在 ADE20K、Cityscapes 和 COCO-Stuff 164K 上开展实验，研究边界增强、多尺度 Haar 小波与边界感知损失。</p>
         </div>
-
     </section>
 
     <section id="publications">
-
         <h2>论文</h2>
-
         <div class="card">
-
             <h3>Boundary-Aware Semantic Segmentation</h3>
-
-            <p>
-                Liu Zheng et al.
-            </p>
-
-            <p>
-                A boundary enhancement method for semantic segmentation.
-            </p>
-
+            <p>Liu Zheng et al.</p>
+            <p>A boundary enhancement method for semantic segmentation.</p>
             <a href="#">Paper</a>
             <a href="#">Code</a>
-
         </div>
-
     </section>
-
 
     <section id="results">
-
         <h2>实验结果 / Experimental Results</h2>
-
-        <p>
-            以 SegMAN-B 为基准，研究边界增强、多尺度 Haar 小波和边界感知损失，
-            并在 ADE20K 与 Cityscapes 验证集上记录分割性能。
-            以下区分最佳验证 checkpoint 与训练结束时的 checkpoint，避免混淆两者。
-        </p>
+        <p>以 SegMAN-B 为基准，研究边界增强、多尺度 Haar 小波和边界感知损失，并在 ADE20K、Cityscapes 与 COCO-Stuff 164K 验证集上记录分割性能。以下区分最佳验证 checkpoint 与最终训练 checkpoint，避免混淆。</p>
 
         <div class="card">
-
             <h3>ADE20K：性能对比</h3>
-
             <table>
                 <thead>
-                <tr>
-                    <th>Model</th>
-                    <th>Dataset</th>
-                    <th>mIoU (%)</th>
-                    <th>Improvement</th>
-                </tr>
+                    <tr><th>Model</th><th>Dataset</th><th>mIoU (%)</th><th>Improvement</th></tr>
                 </thead>
-
                 <tbody>
-                <tr>
-                    <td>SegMAN-B Baseline (local reproduction)</td>
-                    <td>ADE20K</td>
-                    <td>48.66</td>
-                    <td>—</td>
-                </tr>
-
-                <tr>
-                    <td>
-                        SegMAN-B + Boundary Enhancement
-                        + Haar Wavelet + Boundary Loss
-                    </td>
-                    <td>ADE20K</td>
-                    <td><strong>50.63</strong></td>
-                    <td><strong>+1.97 pp</strong></td>
-                </tr>
+                    <tr><td>SegMAN-B Baseline (local reproduction)</td><td>ADE20K</td><td>48.66</td><td>—</td></tr>
+                    <tr>
+                        <td>SegMAN-B + Boundary Enhancement + Haar Wavelet + Boundary Loss</td>
+                        <td>ADE20K</td><td><strong>50.63</strong></td><td><strong>+1.97 pp</strong></td>
+                    </tr>
                 </tbody>
             </table>
-
-            <p>
-                已记录的最佳验证结果：第 148,000 次迭代，mIoU 为 50.63%。
-                此处报告的是最佳 checkpoint，不将其误写为最终迭代 checkpoint 的结果。
-            </p>
-
+            <p>已记录的最佳验证结果：第 148,000 次迭代，mIoU 为 50.63%。此处报告的是最佳 checkpoint，不将其误写为最终迭代 checkpoint 的结果。</p>
         </div>
 
-
         <div class="card">
-
             <h3>ADE20K：训练记录 / Training Progress</h3>
-
             <table>
-                <thead>
-                <tr>
-                    <th>Iteration</th>
-                    <th>mIoU (%)</th>
-                </tr>
-                </thead>
-
+                <thead><tr><th>Iteration</th><th>mIoU (%)</th></tr></thead>
                 <tbody>
-                <tr>
-                    <td>138,000</td>
-                    <td>50.27</td>
-                </tr>
-
-                <tr>
-                    <td>144,000</td>
-                    <td>50.52</td>
-                </tr>
-
-                <tr>
-                    <td>146,000</td>
-                    <td>50.59</td>
-                </tr>
-
-                <tr>
-                    <td>148,000</td>
-                    <td><strong>50.63</strong></td>
-                </tr>
+                    <tr><td>138,000</td><td>50.27</td></tr>
+                    <tr><td>144,000</td><td>50.52</td></tr>
+                    <tr><td>146,000</td><td>50.59</td></tr>
+                    <tr><td>148,000</td><td><strong>50.63</strong></td></tr>
                 </tbody>
             </table>
-
-            <p>
-                训练计划：160,000 次迭代；上表展示已核实的验证记录。
-                最终迭代的独立验证指标尚未纳入本页。
-            </p>
-
+            <p>训练计划：160,000 次迭代；上表展示已核实的验证记录。最终迭代的独立验证指标尚未纳入本页。</p>
         </div>
 
-
         <div class="card">
-
             <h3>Cityscapes：已完成训练 / Completed Training</h3>
-
-            <p>
-                已完成 160,000 次迭代。以下结果来自 Cityscapes 验证集（500 张图像）；
-                第 112,000 次迭代获得本次训练的最佳 mIoU。
-            </p>
-
+            <p>已完成 160,000 次迭代。以下结果来自 Cityscapes 验证集（500 张图像）；第 112,000 次迭代获得本次训练的最佳 mIoU。</p>
             <table>
-                <thead>
-                <tr>
-                    <th>Checkpoint / Iteration</th>
-                    <th>mIoU (%)</th>
-                    <th>aAcc (%)</th>
-                    <th>mAcc (%)</th>
-                </tr>
-                </thead>
-
+                <thead><tr><th>Checkpoint / Iteration</th><th>mIoU (%)</th><th>aAcc (%)</th><th>mAcc (%)</th></tr></thead>
                 <tbody>
-                <tr>
-                    <td>106,000</td>
-                    <td>82.41</td>
-                    <td>96.71</td>
-                    <td>89.19</td>
-                </tr>
-                <tr>
-                    <td><strong>112,000 (Best)</strong></td>
-                    <td><strong>83.02</strong></td>
-                    <td><strong>96.77</strong></td>
-                    <td><strong>89.55</strong></td>
-                </tr>
-                <tr>
-                    <td>160,000 (Final)</td>
-                    <td>82.92</td>
-                    <td>96.85</td>
-                    <td>89.28</td>
-                </tr>
+                    <tr><td>106,000</td><td>82.41</td><td>96.71</td><td>89.19</td></tr>
+                    <tr><td><strong>112,000 (Best)</strong></td><td><strong>83.02</strong></td><td><strong>96.77</strong></td><td><strong>89.55</strong></td></tr>
+                    <tr><td>160,000 (Final)</td><td>82.92</td><td>96.85</td><td>89.28</td></tr>
                 </tbody>
             </table>
-
-            <p>
-                当前展示的是改进模型自身的验证结果；仍需在相同训练和评测设置下
-                复现 Cityscapes 基准模型，才能量化改进方法带来的精度增益。
-            </p>
-
+            <p>当前展示的是改进模型自身的验证结果；仍需在相同训练和评测设置下复现 Cityscapes 基准模型，才能量化改进方法带来的精度增益。</p>
         </div>
 
+        <div class="card">
+            <h3>COCO-Stuff 164K：已完成训练 / Completed Training</h3>
+            <p>2026 年 9 月 19 日启动，9 月 20 日完成 160,000 次迭代和最终验证。本次实验采用 SegMAN-B + Boundary Enhancement + Multi-Scale Haar Wavelet + Boundary-Aware Loss，评估集为 COCO-Stuff 164K 验证集（5,000 张图像）。</p>
+            <table>
+                <thead><tr><th>Checkpoint / Iteration</th><th>mIoU (%)</th><th>aAcc (%)</th><th>mAcc (%)</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>154,000 (Best)</strong></td><td><strong>44.20</strong></td><td>70.07</td><td>57.54</td></tr>
+                    <tr><td>160,000 (Final)</td><td>44.00</td><td>69.94</td><td>57.47</td></tr>
+                </tbody>
+            </table>
+            <p>最佳模型文件：<code>best_mIoU_iter_154000.pth</code>（本地保存，未提供公开权重下载）。单卡 RTX 4070 Ti SUPER；batch size = 2；训练裁剪尺寸 512 × 512；共训练 160,000 次迭代；从启动到完成最终验证历时约 28 小时 7 分钟。</p>
+            <p>以上为改进模型的本地实验记录，并非作者原版 SegMAN-B 的同条件对比结果。尚需核对官方 checkpoint 在本地数据与评估流程下的表现，并补充同设置原版基线和模块消融，才能判断具体改进效果。</p>
+        </div>
 
         <div class="card">
-
             <h3>实验设置 / Experimental Setup</h3>
-
             <p>ADE20K：150 类；训练裁剪尺寸 512 × 512。</p>
             <p>Cityscapes：19 类；训练裁剪尺寸 512 × 1024；单卡 batch size = 2；训练 160,000 次迭代。</p>
+            <p>COCO-Stuff 164K：171 类；训练集 118,287 张，验证集 5,000 张；训练裁剪尺寸 512 × 512；单卡 batch size = 2；训练 160,000 次迭代。</p>
+            <p>Hardware：NVIDIA GeForce RTX 4070 Ti SUPER 16GB（COCO-Stuff 实验）。</p>
             <p>Framework：PyTorch / MMSegmentation。</p>
             <p>Research：Boundary Enhancement、Multi-Scale Haar Wavelet、Boundary-Aware Loss。</p>
-
         </div>
-
 
         <div class="card">
-
             <h3>后续实验 / Ongoing Work</h3>
-
-            <p>
-                ADE20K 和 Cityscapes 验证实验已取得上述记录。
-                接下来开展同设置基准模型对比、模块消融、Cityscapes 边界指标评测，
-                以及模型复杂度与推理效率分析。
-            </p>
-
-            <p>
-                不同数据集及不同训练、评测协议下的 mIoU 不直接作为方法增益进行比较。
-            </p>
-
+            <p>ADE20K、Cityscapes 和 COCO-Stuff 164K 验证实验已有上述记录。接下来开展同设置原版 SegMAN-B 基线对比、各模块消融、边界指标评测，以及 Params、GFLOPs 和 FPS 测试。COCO-Stuff 还需进一步核对官方 checkpoint、标签映射和评估协议。</p>
+            <p>不同数据集及不同训练、评测协议下的 mIoU 不直接作为方法增益进行比较。</p>
         </div>
-
     </section>
-
 
     <section id="contact">
-
         <h2>联系方式</h2>
-
-        <p>
-            Email:
-            <a href="mailto:liuzhengsr9@gmail.com">
-                liuzhengsr9@gmail.com
-            </a>
-        </p>
-
-        <p>
-            GitHub:
-            <a href="https://github.com/lzcvss"
-               target="_blank"
-               rel="noopener noreferrer">
-                github.com/lzcvss
-            </a>
-        </p>
-
+        <p>Email: <a href="mailto:liuzhengsr9@gmail.com">liuzhengsr9@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/lzcvss" target="_blank" rel="noopener noreferrer">github.com/lzcvss</a></p>
     </section>
-
 </main>
 
-
-<footer>
-
-    <p>
-        © 2026 Liu Zheng · Computer Vision Research
-    </p>
-
-</footer>
-
-
+<footer><p>© 2026 Liu Zheng · Computer Vision Research</p></footer>
 <script src="script.js"></script>
-
 </body>
-
 </html>
