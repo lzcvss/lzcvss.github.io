@@ -96,3 +96,15 @@ footer {
 
     padding: 30px;
 }
+
+/* Workbench entry keeps the original homepage intact. */
+nav { z-index: 10; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+nav a { margin: 0 8px; }
+nav .workbench-link { color: #087f75; }
+.workbench-entry { background: #e8f3f0; border: 1px solid #cde4de; border-radius: 12px; padding: 28px; display: flex; gap: 24px; align-items: center; }
+.workbench-entry h2 { font-size: 25px; border: 0; padding: 0; }
+.workbench-entry p { line-height: 1.8; }
+.workbench-entry .entry-eyebrow { font-size: 11px; letter-spacing: 2px; color: #087f75; }
+.workbench-entry a { background: #087f75; color: white; text-decoration: none; border-radius: 6px; padding: 14px 18px; white-space: nowrap; }
+table { width: 100%; border-collapse: collapse; } th, td { padding: 10px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+@media(max-width:640px) { .workbench-entry { display: block; } .workbench-entry a { display: inline-block; } .card { overflow-x: auto; } }

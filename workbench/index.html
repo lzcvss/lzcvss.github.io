@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="刘征的科研与职业规划工作台：研究、实验、精读、论文写作与职业机会。">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>科研与职业规划工作台 · 刘征</title>
+  <link rel="stylesheet" href="workbench.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#content">跳转到内容</a>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="../"><span class="brand-icon">LZ<span>·</span></span><span>刘征的研究空间<small>COMPUTER VISION LAB</small></span></a>
+    <div class="workspace-label">科研与职业规划</div>
+    <nav id="nav" aria-label="工作台导航"></nav>
+    <div class="sidebar-bottom"><div class="focus-dot"></div><div>科研第一，持续积累<small>以语义分割为主线</small></div></div>
+    <a class="back-home" href="../">↗ 返回个人科研主页</a>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><button class="icon-btn mobile-menu" id="menu" aria-label="展开导航">☰</button><div class="breadcrumb">研究空间 <span>/</span> <strong id="breadcrumb">工作台总览</strong></div><div class="top-right"><span id="sync-status" class="sync-status">正在读取数据</span><button class="btn quiet" id="manage">数据与同步</button><span class="avatar">征</span></div></header>
+    <main id="content" tabindex="-1"><div class="loading">正在读取工作台…</div></main>
+    <footer class="app-footer"><span>刘征 · 计算机视觉研究</span><span>未知信息显示为“待补充” · 北京时间</span></footer>
+  </div>
+  <dialog id="detail-dialog" class="detail-dialog"><div id="detail-content"></div></dialog>
+  <dialog id="edit-dialog" class="edit-dialog"><div id="edit-content"></div></dialog>
+  <dialog id="data-dialog" class="data-dialog"><div id="data-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <input id="import-file" type="file" accept="application/json,.json" hidden>
+</body>
+</html>
